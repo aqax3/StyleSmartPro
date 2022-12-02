@@ -1,16 +1,20 @@
+package com.StyleSmartPro.StyleSmartPro.models;
+
+import java.util.ArrayList;
+
 public interface Iskanje {
 
 	/**
 	 * 
 	 * @param frizer
 	 */
-	arrayList<Termin> pregledProstihTerminov(Frizer frizer);
+	ArrayList<Termin> pregledProstihTerminov(Frizer frizer);
 
 	/**
 	 * 
 	 * @param prostiTermini
 	 * @param filter
 	 */
-	arrayList<Termin> iskanjeTerminov(arrayList<Termin> prostiTermini, arrayList<Storitev> filter);
+	ArrayList<Termin> iskanjeTerminov(ArrayList<Termin> prostiTermini, ArrayList<Storitev> filter);
 
 }

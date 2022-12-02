@@ -1,7 +1,11 @@
+package com.StyleSmartPro.StyleSmartPro.models;
+
+import java.util.ArrayList;
+
 public class Frizer extends Uporabnik {
 
-	private arrayList<Termin> termini;
-	private arrayList<DelovniCas> delovniCas;
+	private ArrayList<Termin> termini;
+	private ArrayList<DelovniCas> delovniCas;
 
 	/**
 	 * 

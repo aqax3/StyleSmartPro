@@ -1,9 +1,11 @@
+package com.StyleSmartPro.StyleSmartPro.models;
+
 public abstract class Uporabnik {
 
-	private string ime;
-	private string priimek;
-	private string gmail;
-	private string geslo;
-	private string userName;
+	private String ime;
+	private String priimek;
+	private String gmail;
+	private String geslo;
+	private String userName;
 
 }

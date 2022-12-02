@@ -1,6 +1,8 @@
+package com.StyleSmartPro.StyleSmartPro.models;
+
 public class Komentar {
 
 	private short ocena;
-	private string komentar;
+	private String komentar;
 
 }

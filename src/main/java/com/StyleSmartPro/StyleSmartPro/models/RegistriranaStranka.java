@@ -1,9 +1,15 @@
+package com.StyleSmartPro.StyleSmartPro.models;
+
+import javax.xml.stream.Location;
+import java.util.ArrayList;
+import java.util.Calendar;
+
 public class RegistriranaStranka extends Uporabnik implements Iskanje {
 
-	private arrayList<Termin> termini;
+	private ArrayList<Termin> termini;
 	private Location trenutnaLokacija;
 	private int krsitve;
-	private arrayList<Komentar> seznamKomentarjev;
+	private ArrayList<Komentar> seznamKomentarjev;
 
 	/**
 	 * 
@@ -11,7 +17,7 @@ public class RegistriranaStranka extends Uporabnik implements Iskanje {
 	 * @param komentar
 	 * @param termin
 	 */
-	public Komentar ocenjevanjeStoritev(short ocena, string komentar, Termin termin) {
+	public Komentar ocenjevanjeStoritev(short ocena, String komentar, Termin termin) {
 		// TODO - implement RegistriranaStranka.ocenjevanjeStoritev
 		throw new UnsupportedOperationException();
 	}
@@ -21,7 +27,7 @@ public class RegistriranaStranka extends Uporabnik implements Iskanje {
 	 * @param produkt
 	 * @param frizerskiSalon
 	 */
-	public boolean pregledZalog(string produkt, FrizerskiSalon frizerskiSalon) {
+	public boolean pregledZalog(String produkt, FrizerskiSalon frizerskiSalon) {
 		// TODO - implement RegistriranaStranka.pregledZalog
 		throw new UnsupportedOperationException();
 	}
@@ -48,4 +54,13 @@ public class RegistriranaStranka extends Uporabnik implements Iskanje {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public ArrayList<Termin> pregledProstihTerminov(Frizer frizer) {
+		return null;
+	}
+
+	@Override
+	public ArrayList<Termin> iskanjeTerminov(ArrayList<Termin> prostiTermini, ArrayList<Storitev> filter) {
+		return null;
+	}
 }

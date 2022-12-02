@@ -1,5 +1,9 @@
+package com.StyleSmartPro.StyleSmartPro.models;
+
+import java.util.ArrayList;
+
 public class Termin extends Cas {
 
-	private arrayList<Storitev> storitve;
+	private ArrayList<Storitev> storitve;
 
 }

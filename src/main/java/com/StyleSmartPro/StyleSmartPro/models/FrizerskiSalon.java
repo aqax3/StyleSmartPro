@@ -1,10 +1,15 @@
+package com.StyleSmartPro.StyleSmartPro.models;
+
+import javax.xml.stream.Location;
+import java.util.ArrayList;
+
 public class FrizerskiSalon {
 
-	private string naziv;
-	private arrayList<DelovniCas> delovnik;
-	private string telefon;
-	private arrayList<Frizer> zaposleni;
+	private String naziv;
+	private ArrayList<DelovniCas> delovnik;
+	private String telefon;
+	private ArrayList<Frizer> zaposleni;
 	private Location lokacija;
-	private arrayList<Zaloga> zaloge;
+	private ArrayList<Zaloga> zaloge;
 
 }

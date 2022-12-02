@@ -1,7 +1,9 @@
+package com.StyleSmartPro.StyleSmartPro.models;
+
 public class Storitev {
 
-	private string ime;
+	private String ime;
 	private int priblizenCasTrajanja;
-	private string spol;
+	private String spol;
 
 }
