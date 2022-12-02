@@ -1,1 +1,1 @@
-# StyleSmartPro
+# StyleSmart Pro
