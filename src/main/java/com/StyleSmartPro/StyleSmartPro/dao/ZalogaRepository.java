@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ZalogaRepository extends CrudRepository<Zaloga, Long> {
-@Query("select z from Zaloga z where kolicina < 3 and kolicina > 7")
-    List<Zaloga> vrniKolicine(int zaloga);
+@Query("select z from Zaloga z where kolicina > 3 and kolicina < 7")
+List<Zaloga> vrniKolicine();
 }
