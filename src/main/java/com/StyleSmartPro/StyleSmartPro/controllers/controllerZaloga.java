@@ -69,7 +69,13 @@ public class controllerZaloga {
 
         return null;
     }
+
+    @GetMapping("/getByKolicina")
+    public Iterable<Zaloga> byKolicina() {
+        return zalogaDao.vrniKolicine();
+    }
 }
+
 
 
 
