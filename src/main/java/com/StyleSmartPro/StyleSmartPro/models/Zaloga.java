@@ -32,7 +32,12 @@ public class Zaloga {
 		return kolicina;
 	}
 
-	public void setKolicina(int kolicina) {
+	public void setKolicina(Integer kolicina) {
 		this.kolicina = kolicina;
+	}
+
+	@Override
+	public String toString() {
+		return this.getIme();
 	}
 }
