@@ -15,11 +15,6 @@ public class controllerZaloga {
     private ZalogaRepository zalogaDao;
 
 
-    @GetMapping("/helloWorld")
-    public String helloWorld(){
-        return "Hello world";
-    }
-
     @GetMapping("/getAllZaloga")
         public Iterable<Zaloga> vrniZalogo(){
             return zalogaDao.findAll();
