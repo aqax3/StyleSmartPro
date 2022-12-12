@@ -40,7 +40,6 @@ public class controllerZaloga {
             }
         }
 
-
         return null;
 
     }
