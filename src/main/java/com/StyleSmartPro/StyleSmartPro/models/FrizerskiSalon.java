@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import javax.xml.stream.Location;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class FrizerskiSalon {
@@ -14,12 +15,67 @@ public class FrizerskiSalon {
 
 	private String naziv;
 	@OneToMany(mappedBy = "delovnikFS")
-	private ArrayList<DelovniCas> delovnik;
+	private List<DelovniCas> delovnik;
 	private String telefon;
 	@OneToMany(mappedBy = "delovnoMesto")
-	private ArrayList<Frizer> zaposleni;
+	private List<Frizer> zaposleni;
 	private String lokacija;
 	@OneToMany(mappedBy = "zalogaVFS")
-	private ArrayList<Zaloga> zaloge;
+	private List<Zaloga> zaloge;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNaziv() {
+		return naziv;
+	}
+
+	public void setNaziv(String naziv) {
+		this.naziv = naziv;
+	}
+
+	public List<DelovniCas> getDelovnik() {
+		return delovnik;
+	}
+
+	public void setDelovnik(List<DelovniCas> delovnik) {
+		this.delovnik = delovnik;
+	}
+
+	public String getTelefon() {
+		return telefon;
+	}
+
+	public void setTelefon(String telefon) {
+		this.telefon = telefon;
+	}
+
+	public List<Frizer> getZaposleni() {
+		return zaposleni;
+	}
+
+	public void setZaposleni(List<Frizer> zaposleni) {
+		this.zaposleni = zaposleni;
+	}
+
+	public String getLokacija() {
+		return lokacija;
+	}
+
+	public void setLokacija(String lokacija) {
+		this.lokacija = lokacija;
+	}
+
+	public List<Zaloga> getZaloge() {
+		return zaloge;
+	}
+
+	public void setZaloge(List<Zaloga> zaloge) {
+		this.zaloge = zaloge;
+	}
 }
