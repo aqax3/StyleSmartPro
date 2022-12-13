@@ -3,15 +3,17 @@ package com.StyleSmartPro.StyleSmartPro.models;
 import jakarta.persistence.*;
 
 import java.util.Calendar;
+import java.util.Date;
 
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 public abstract class Cas {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	private Calendar datum;
+	@Column(name="id", nullable = false)
+	private Long id;
+
+	private Date datum;
 	private int dolzinaIzvajanja;
 
 }

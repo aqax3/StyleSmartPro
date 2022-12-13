@@ -11,6 +11,9 @@ public class Zaloga {
 
 	private String ime;
 	private int kolicina;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "FS_id_zaloga")
+	private FrizerskiSalon zalogaVFS;
 
 	public Long getId() {
 		return id;

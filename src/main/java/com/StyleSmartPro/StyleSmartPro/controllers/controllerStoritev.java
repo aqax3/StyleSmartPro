@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -33,10 +34,11 @@ public class controllerStoritev {
         ArrayList<Storitev> s = (ArrayList<Storitev>) storitveDao.findAll();
         for (int i = 0; i < s.size(); i++) {
             Storitev storitev = s.get(i);
-            if (storitev.getId() == id) {
+            if (Objects.equals(storitev.getId(), id)) {
                 storitev.setIme(sPodatki.getIme());
                 storitev.setSpol(sPodatki.getSpol());
                 storitev.setPriblizenCasTrajanja(sPodatki.getPriblizenCasTrajanja());
+                storitev.setStoritevTermina(sPodatki.getStoritevTermina());
                 storitveDao.save(storitev);
                 return storitev;
             }
@@ -50,7 +52,7 @@ public class controllerStoritev {
         if (s.size() != 0) {
             for (int i = 0; i < s.size(); i++) {
                 Storitev storitev = s.get(i);
-                if (storitev.getId() == id) {
+                if (Objects.equals(storitev.getId(), id)) {
                     storitveDao.delete(storitev);
                 }
             }

@@ -13,6 +13,9 @@ public class Storitev {
 	private String ime;
 	private int priblizenCasTrajanja;
 	private String spol;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="termin_id_stortitev")
+	private Termin storitevTermina;
 
 	public Long getId() {
 		return id;
@@ -24,6 +27,14 @@ public class Storitev {
 
 	public String getIme() {
 		return ime;
+	}
+
+	public Termin getStoritevTermina() {
+		return storitevTermina;
+	}
+
+	public void setStoritevTermina(Termin storitevTermina) {
+		this.storitevTermina = storitevTermina;
 	}
 
 	public void setIme(String ime) {
