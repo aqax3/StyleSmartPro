@@ -11,6 +11,7 @@ public class Zaloga {
 
 	private String ime;
 	private int kolicina;
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "FS_id_zaloga")
 	private FrizerskiSalon zalogaVFS;
@@ -27,9 +28,14 @@ public class Zaloga {
 		return ime;
 	}
 
+	public void setKolicina(int kolicina) {
+		this.kolicina = kolicina;
+	}
+
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
+
 
 	public int getKolicina() {
 		return kolicina;

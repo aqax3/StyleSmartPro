@@ -48,6 +48,7 @@ public class controllerFrizer {
                 frizer.setGeslo(frizerPodatki.getGeslo());
                 frizer.setUserName(frizerPodatki.getUserName());
                 frizer.setGmail(frizerPodatki.getGmail());
+                frizer.setDelovnoMesto(frizerPodatki.getDelovnoMesto());
 
                 frizerDao.save(frizer);
 

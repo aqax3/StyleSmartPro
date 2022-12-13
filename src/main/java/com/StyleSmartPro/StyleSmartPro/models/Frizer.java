@@ -1,5 +1,6 @@
 package com.StyleSmartPro.StyleSmartPro.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class Frizer {
 	@OneToMany(mappedBy = "delovniCasFrizerja")
 	private List<DelovniCas> delovniCas;
 
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "FS_id_frizer")
 	private FrizerskiSalon delovnoMesto;

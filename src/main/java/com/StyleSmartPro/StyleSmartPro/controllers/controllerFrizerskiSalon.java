@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -38,7 +39,6 @@ public class controllerFrizerskiSalon {
                 poskus.setZaloge(fsPodatki.getZaloge());
                 poskus.setTelefon(fsPodatki.getTelefon());
                 poskus.setLokacija(fsPodatki.getLokacija());
-                poskus.setZaposleni(fsPodatki.getZaposleni());
                 frizerskiSalonDao.save(poskus);
                 return poskus;
             }
@@ -58,4 +58,30 @@ public class controllerFrizerskiSalon {
             }
         }
     }
+
+    @GetMapping("/steviloZaposlenih/{id}")
+    public Integer steviloZaposlenih(@PathVariable(value="id") Long id) {
+        ArrayList<FrizerskiSalon> frizerskiSaloni = (ArrayList<FrizerskiSalon>) frizerskiSalonDao.findAll();
+        FrizerskiSalon isci = new FrizerskiSalon();
+        for (int i = 0; i < frizerskiSaloni.size(); i++) {
+            FrizerskiSalon fs = frizerskiSaloni.get(i);
+            if (fs.getId().equals(id)) {
+                isci = fs;
+            }
+        }
+        return frizerskiSalonDao.steviloZaposlenih(isci);
+    }
+
+    /*@GetMapping("/vrniZaposlene/{id}")
+    public Iterable<Frizer> vrniZaposlene(@PathVariable(value="id") Long id) {
+        ArrayList<FrizerskiSalon> frizerskiSaloni = (ArrayList<FrizerskiSalon>) frizerskiSalonDao.findAll();
+        FrizerskiSalon isci = new FrizerskiSalon();
+        for (int i = 0; i < frizerskiSaloni.size(); i++) {
+            FrizerskiSalon fs = frizerskiSaloni.get(i);
+            if (fs.getId().equals(id)) {
+                isci = fs;
+            }
+        }
+        return frizerskiSalonDao.vrniZaposlene(isci);
+    }*/
 }
