@@ -14,17 +14,7 @@ public class controllerFrizer {
     private FrizerRepository frizerDao;
 
     @GetMapping("/getAllFrizer")
-    public String vrniFrizerje() {
-        Iterable<Frizer> frizerji = frizerDao.findAll();
-        ArrayList<Frizer> frizer = (ArrayList<Frizer>) frizerji;
-        String s = "";
-        for (int i = 0; i < frizer.size(); i++) {
-            Frizer f = frizer.get(i);
-            s += f;
-            s += "\n";
-        }
-        return s;
-    }
+    public Iterable<Frizer> vrniFrizerje() { return frizerDao.findAll(); }
 
     @GetMapping("/getFrizer/{id}")
     public Optional<Frizer> getFrizerById(@PathVariable(value = "id") Long id) {
@@ -33,6 +23,7 @@ public class controllerFrizer {
 
     @PostMapping("/postFrizer")
     public Frizer dodajFrizerja(@RequestBody Frizer f) {
+        System.out.println(f.toString());
         return frizerDao.save(f);
     }
 

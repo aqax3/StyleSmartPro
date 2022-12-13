@@ -3,11 +3,61 @@ package com.StyleSmartPro.StyleSmartPro.models;
 import jakarta.persistence.*;
 
 @Entity
-public class Admin extends Uporabnik {
+public class Admin {
 	@jakarta.persistence.Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", nullable = false)
 	private Long id;
+
+	private String ime;
+
+	private String priimek;
+
+	private String gmail;
+
+	private String geslo;
+
+	public String getIme() {
+		return ime;
+	}
+
+	public void setIme(String ime) {
+		this.ime = ime;
+	}
+
+	public String getPriimek() {
+		return priimek;
+	}
+
+	public void setPriimek(String priimek) {
+		this.priimek = priimek;
+	}
+
+	public String getGmail() {
+		return gmail;
+	}
+
+	public void setGmail(String gmail) {
+		this.gmail = gmail;
+	}
+
+	public String getGeslo() {
+		return geslo;
+	}
+
+	public void setGeslo(String geslo) {
+		this.geslo = geslo;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	private String userName;
 
 
 	public Long getId() {

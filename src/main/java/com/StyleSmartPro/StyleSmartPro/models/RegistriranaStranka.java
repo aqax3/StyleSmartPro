@@ -1,15 +1,37 @@
 package com.StyleSmartPro.StyleSmartPro.models;
 
+import jakarta.persistence.*;
+
 import javax.xml.stream.Location;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
-public class RegistriranaStranka extends Uporabnik implements Iskanje {
+@Entity
+public class RegistriranaStranka implements Iskanje {
 
-	private ArrayList<Termin> termini;
-	private Location trenutnaLokacija;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id", nullable = false)
+	private Long id;
+	private String ime;
+
+	private String priimek;
+
+	private String gmail;
+
+	private String geslo;
+
+	@OneToMany(mappedBy="terminStranke")
+	private List<Termin> termini;
+
+	private String trenutnaLokacija;
+
 	private int krsitve;
-	private ArrayList<Komentar> seznamKomentarjev;
+
+	@OneToMany(mappedBy = "komentarStranke")
+	private List<Komentar> seznamKomentarjev;
+
 
 	/**
 	 * 
