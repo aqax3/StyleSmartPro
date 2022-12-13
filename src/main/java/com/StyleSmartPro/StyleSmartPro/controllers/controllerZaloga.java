@@ -56,12 +56,7 @@ public class controllerZaloga {
         for (int i = 0; i < zaloge.size(); i++) {
             Zaloga zaloga = zaloge.get(i);
             if (zaloga.getId() == id) {
-                zaloga.setIme("");
-                zaloga.setKolicina(0);
-
-                zalogaDao.save(zaloga);
-
-                return zaloga;
+               zalogaDao.delete(zaloga);
             }
         }
 
