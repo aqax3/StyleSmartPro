@@ -1,10 +1,19 @@
 package com.StyleSmartPro.StyleSmartPro.models;
 
-import java.util.Calendar;
+import jakarta.persistence.*;
 
+import java.util.Calendar;
+import java.util.Date;
+
+@MappedSuperclass
 public abstract class Cas {
 
-	private Calendar datum;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id", nullable = false)
+	private Long id;
+
+	private Date datum;
 	private int dolzinaIzvajanja;
 
 }
