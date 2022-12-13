@@ -23,20 +23,10 @@ public class controllerFrizer {
 
     @PostMapping("/postFrizer")
     public Frizer dodajFrizerja(@RequestBody Frizer f) {
-        System.out.println(f.toString());
         return frizerDao.save(f);
     }
 
-    @DeleteMapping("/deleteAllFrizer")
-    public void deleteAllFrizer() {
-        ArrayList<Frizer> f = (ArrayList<Frizer>) frizerDao.findAll();
-        for (int i = 0; i < f.size(); i++) {
-            Frizer fs = f.get(i);
-            frizerDao.delete(fs);
-        }
-    }
-
-   /* @DeleteMapping("/deleteFrizer/{id}")
+   @DeleteMapping("/deleteFrizer/{id}")
     public void deleteFrizer(@PathVariable(value = "id") Long id) {
         ArrayList<Frizer> frizerji = (ArrayList<Frizer>) frizerDao.findAll();
         for (int i = 0; i < frizerji.size(); i++) {
@@ -45,6 +35,26 @@ public class controllerFrizer {
                 frizerDao.delete(f);
             }
         }
-    }*/
+    }
+
+    @PutMapping("/putFrizer/{id}")
+    public Frizer updateFrizer(@PathVariable(value = "id") Long id, @RequestBody Frizer frizerPodatki){
+        ArrayList<Frizer> frizerji = (ArrayList<Frizer>) frizerDao.findAll();
+        for (int i = 0; i < frizerji.size(); i++){
+            Frizer frizer = frizerji.get(i);
+            if(frizer.getId().equals(id)){
+                frizer.setIme(frizerPodatki.getIme());
+                frizer.setPriimek(frizerPodatki.getPriimek());
+                frizer.setGeslo(frizerPodatki.getGeslo());
+                frizer.setUserName(frizerPodatki.getUserName());
+                frizer.setGmail(frizerPodatki.getGmail());
+
+                frizerDao.save(frizer);
+
+                return frizer;
+            }
+        }
+        return null;
+    }
 
 }
