@@ -68,6 +68,7 @@ public class controllerFrizer {
     @GetMapping("/frizerjiVImenuSalona/{naziv}")
     public List<Frizer> frizerjiVImenuSalona(@PathVariable(value = "naziv") String naziv){
         return frizerDao.frizerjiVImenuSalona(naziv);
+
     }
 
 }
