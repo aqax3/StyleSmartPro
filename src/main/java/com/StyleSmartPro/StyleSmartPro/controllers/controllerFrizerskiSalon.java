@@ -38,7 +38,6 @@ public class controllerFrizerskiSalon {
                 poskus.setZaloge(fsPodatki.getZaloge());
                 poskus.setTelefon(fsPodatki.getTelefon());
                 poskus.setLokacija(fsPodatki.getLokacija());
-                poskus.setZaposleni(fsPodatki.getZaposleni());
                 frizerskiSalonDao.save(poskus);
                 return poskus;
             }

@@ -17,8 +17,6 @@ public class FrizerskiSalon {
 	@OneToMany(mappedBy = "delovnikFS")
 	private List<DelovniCas> delovnik;
 	private String telefon;
-	@OneToMany(mappedBy = "delovnoMesto")
-	private List<Frizer> zaposleni;
 	private String lokacija;
 	@OneToMany(mappedBy = "zalogaVFS")
 	private List<Zaloga> zaloge;
@@ -53,14 +51,6 @@ public class FrizerskiSalon {
 
 	public void setTelefon(String telefon) {
 		this.telefon = telefon;
-	}
-
-	public List<Frizer> getZaposleni() {
-		return zaposleni;
-	}
-
-	public void setZaposleni(List<Frizer> zaposleni) {
-		this.zaposleni = zaposleni;
 	}
 
 	public String getLokacija() {
