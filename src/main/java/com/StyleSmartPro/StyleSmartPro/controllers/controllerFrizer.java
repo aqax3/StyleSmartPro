@@ -71,4 +71,14 @@ public class controllerFrizer {
 
     }
 
+    @GetMapping("/frizerKiImaNaZalogi/{id}")
+    public List<Frizer> frizerKiImaNaZalogi(@PathVariable(value = "id") Long id){
+        return frizerDao.frizerKiImaNaZalogi(id);
+    }
+
+    @GetMapping("/frizerKiImaNaZalogiIme/{ime}")
+    public List<Frizer> frizerKiImaNaZalogiIme(@PathVariable(value = "ime") String ime){
+        return frizerDao.frizerKiImaNaZalogiIme(ime);
+    }
+
 }

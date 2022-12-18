@@ -14,4 +14,10 @@ public interface FrizerRepository extends CrudRepository<Frizer, Long> {
     @Query("SELECT f FROM Frizer f WHERE f.delovnoMesto.naziv = ?1")
     List<Frizer> frizerjiVImenuSalona(String naziv);
 
+    @Query("SELECT f FROM Frizer f JOIN f.delovnoMesto dm JOIN dm.zaloge z WHERE z.id = ?1")
+    List<Frizer> frizerKiImaNaZalogi(Long id);
+
+    @Query("SELECT f FROM Frizer f JOIN f.delovnoMesto dm JOIN dm.zaloge z WHERE z.ime = ?1")
+    List<Frizer> frizerKiImaNaZalogiIme(String ime);
+
 }

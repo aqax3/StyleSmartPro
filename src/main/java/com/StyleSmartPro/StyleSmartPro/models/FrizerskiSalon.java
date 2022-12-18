@@ -1,5 +1,6 @@
 package com.StyleSmartPro.StyleSmartPro.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import javax.xml.stream.Location;
@@ -18,7 +19,9 @@ public class FrizerskiSalon {
 	private List<DelovniCas> delovnik;
 	private String telefon;
 	private String lokacija;
-	@OneToMany(mappedBy = "zalogaVFS")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fs_id_zaloga")
 	private List<Zaloga> zaloge;
 
 	public Long getId() {
