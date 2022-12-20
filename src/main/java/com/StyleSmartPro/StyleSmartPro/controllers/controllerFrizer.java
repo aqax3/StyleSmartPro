@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -49,6 +50,7 @@ public class controllerFrizer {
                 frizer.setUserName(frizerPodatki.getUserName());
                 frizer.setGmail(frizerPodatki.getGmail());
                 frizer.setDelovnoMesto(frizerPodatki.getDelovnoMesto());
+                frizer.setDelovniCas(frizerPodatki.getDelovniCas());
 
                 frizerDao.save(frizer);
 
@@ -58,4 +60,29 @@ public class controllerFrizer {
         return null;
     }
 
+    @GetMapping("/frizerjiVSalonu/{ime}/{id}")
+    public List<Frizer> frizerjiVSalonu(@PathVariable(value =  "ime") String ime, @PathVariable(value = "id")  Long id){
+        return frizerDao.frizerjiVSalonu(ime,id);
+    }
+
+    @GetMapping("/frizerjiVImenuSalona/{naziv}")
+    public List<Frizer> frizerjiVImenuSalona(@PathVariable(value = "naziv") String naziv){
+        return frizerDao.frizerjiVImenuSalona(naziv);
+
+    }
+
+    @GetMapping("/frizerKiImaNaZalogi/{id}")
+    public List<Frizer> frizerKiImaNaZalogi(@PathVariable(value = "id") Long id){
+        return frizerDao.frizerKiImaNaZalogi(id);
+    }
+
+    @GetMapping("/frizerKiImaNaZalogiIme/{ime}")
+    public List<Frizer> frizerKiImaNaZalogiIme(@PathVariable(value = "ime") String ime){
+        return frizerDao.frizerKiImaNaZalogiIme(ime);
+    }
+
+    @GetMapping("/frizerKiDelaVXSalonu8h/{ime}")
+    public List<Frizer> frizerKiDelaVXSalonu8h(@PathVariable(value = "ime") String ime){
+        return frizerDao.frizerKiDelaVXSalonu8h(ime);
+    }
 }

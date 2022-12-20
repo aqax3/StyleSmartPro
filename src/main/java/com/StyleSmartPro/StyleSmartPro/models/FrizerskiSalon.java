@@ -19,9 +19,9 @@ public class FrizerskiSalon {
 	private List<DelovniCas> delovnik;
 	private String telefon;
 	private String lokacija;
-
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-	@OneToMany(mappedBy = "zalogaVFS")
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fs_id_zaloga")
 	private List<Zaloga> zaloge;
 
 	public Long getId() {
@@ -56,7 +56,6 @@ public class FrizerskiSalon {
 		this.telefon = telefon;
 	}
 
-
 	public String getLokacija() {
 		return lokacija;
 	}
@@ -71,5 +70,17 @@ public class FrizerskiSalon {
 
 	public void setZaloge(List<Zaloga> zaloge) {
 		this.zaloge = zaloge;
+	}
+
+	@Override
+	public String toString() {
+		return "FrizerskiSalon{" +
+				"id=" + id +
+				", naziv='" + naziv + '\'' +
+				", delovnik=" + delovnik +
+				", telefon='" + telefon + '\'' +
+				", lokacija='" + lokacija + '\'' +
+				", zaloge=" + zaloge +
+				'}';
 	}
 }

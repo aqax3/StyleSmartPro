@@ -31,7 +31,7 @@ public class Frizer {
 
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "FS_id_frizer")
+	@JoinColumn(name = "fs_id_frizer")
 	private FrizerskiSalon delovnoMesto;
 
 	public List<Termin> getTermini() {
@@ -117,13 +117,18 @@ public class Frizer {
 	}
 
 
-	/*@Override
+	@Override
 	public String toString() {
 		return "Frizer{" +
-				super.toString() +
-				"termini=" + termini +
+				"id=" + id +
+				", ime='" + ime + '\'' +
+				", priimek='" + priimek + '\'' +
+				", gmail='" + gmail + '\'' +
+				", geslo='" + geslo + '\'' +
+				", userName='" + userName + '\'' +
+				", termini=" + termini +
 				", delovniCas=" + delovniCas +
 				", delovnoMesto=" + delovnoMesto +
 				'}';
-	}*/
+	}
 }

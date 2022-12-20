@@ -3,9 +3,19 @@ package com.StyleSmartPro.StyleSmartPro.models;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 @Entity
-public class Termin extends Cas {
+public class Termin{
+
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id", nullable = false)
+	private Long id;
+
+	private Calendar datum;
+	private int dolzinaIzvajanja;
 
 	@OneToMany(mappedBy = "storitevTermina")
 	private ArrayList<Storitev> storitve;
