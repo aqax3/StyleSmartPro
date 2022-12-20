@@ -71,4 +71,16 @@ public class FrizerskiSalon {
 	public void setZaloge(List<Zaloga> zaloge) {
 		this.zaloge = zaloge;
 	}
+
+	@Override
+	public String toString() {
+		return "FrizerskiSalon{" +
+				"id=" + id +
+				", naziv='" + naziv + '\'' +
+				", delovnik=" + delovnik +
+				", telefon='" + telefon + '\'' +
+				", lokacija='" + lokacija + '\'' +
+				", zaloge=" + zaloge +
+				'}';
+	}
 }

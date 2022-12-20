@@ -117,13 +117,18 @@ public class Frizer {
 	}
 
 
-	/*@Override
+	@Override
 	public String toString() {
 		return "Frizer{" +
-				super.toString() +
-				"termini=" + termini +
+				"id=" + id +
+				", ime='" + ime + '\'' +
+				", priimek='" + priimek + '\'' +
+				", gmail='" + gmail + '\'' +
+				", geslo='" + geslo + '\'' +
+				", userName='" + userName + '\'' +
+				", termini=" + termini +
 				", delovniCas=" + delovniCas +
 				", delovnoMesto=" + delovnoMesto +
 				'}';
-	}*/
+	}
 }

@@ -81,4 +81,8 @@ public class controllerFrizer {
         return frizerDao.frizerKiImaNaZalogiIme(ime);
     }
 
+    @GetMapping("/frizerKiDelaVXSalonu8h/{ime}")
+    public List<Frizer> frizerKiDelaVXSalonu8h(@PathVariable(value = "ime") String ime){
+        return frizerDao.frizerKiDelaVXSalonu8h(ime);
+    }
 }
