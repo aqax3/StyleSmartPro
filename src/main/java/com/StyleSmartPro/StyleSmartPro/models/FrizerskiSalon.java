@@ -17,6 +17,20 @@ public class FrizerskiSalon {
 	private String naziv;
 	@OneToMany(mappedBy = "delovnikFS")
 	private List<DelovniCas> delovnik;
+
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "delovnoMesto")
+	private List<Frizer> zaposleni;
+
+	public List<Frizer> getZaposleni() {
+		return zaposleni;
+	}
+
+	public void setZaposleni(List<Frizer> zaposleni) {
+		this.zaposleni = zaposleni;
+	}
+
 	private String telefon;
 	private String lokacija;
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -27,6 +41,7 @@ public class FrizerskiSalon {
 	public Long getId() {
 		return id;
 	}
+
 
 	public void setId(Long id) {
 		this.id = id;

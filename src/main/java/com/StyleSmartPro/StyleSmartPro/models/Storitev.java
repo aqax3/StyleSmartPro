@@ -1,5 +1,6 @@
 package com.StyleSmartPro.StyleSmartPro.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +14,7 @@ public class Storitev {
 	private String ime;
 	private int priblizenCasTrajanja;
 	private String spol;
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="termin_id_stortitev")
 	private Termin storitevTermina;
@@ -57,4 +59,14 @@ public class Storitev {
 		this.spol = spol;
 	}
 
+	@Override
+	public String toString() {
+		return "Storitev{" +
+				"id=" + id +
+				", ime='" + ime + '\'' +
+				", priblizenCasTrajanja=" + priblizenCasTrajanja +
+				", spol='" + spol + '\'' +
+				", storitevTermina=" + storitevTermina +
+				'}';
+	}
 }

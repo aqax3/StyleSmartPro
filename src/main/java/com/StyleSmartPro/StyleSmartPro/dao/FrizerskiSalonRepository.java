@@ -8,9 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface FrizerskiSalonRepository extends CrudRepository<FrizerskiSalon, Long> {
-    @Query ("SELECT COUNT(*) FROM Frizer f WHERE f.delovnoMesto = ?1")
-    Integer steviloZaposlenih(FrizerskiSalon fs);
 
-    /*@Query ("SELECT * FROM Frizer f WHERE f.delovnoMesto = ?1")
-    Iterable<Frizer> vrniZaposlene(FrizerskiSalon fs);*/
+    /*@Query ("SELECT fs FROM FrizerskiSalon fs WHERE fs.zaloge.kolicina = ?1")
+    List<FrizerskiSalon> vrniFSKjerZalogaVecjaOd(Integer kolicina);*/
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -63,5 +64,15 @@ public class controllerStoritev {
     @GetMapping("/vrniStoritvePoSpoluInCasu/{spol}/{cas}")
     public Iterable<Storitev> vrniStoritveZaZenske(@PathVariable(value="spol") String spol, @PathVariable(value="cas") int cas) {
         return storitveDao.vrniStoritveZaZenske(spol, cas);
+    }
+
+    @GetMapping("/vrniStoritveSTermini/{dolzina}")
+    public List<Storitev> terminiSCasom(@PathVariable(value="dolzina") Integer dolzina) {
+        return storitveDao.storitveSTerminiZDolocenoDolzino(dolzina);
+    }
+
+    @GetMapping("/vrniStoritve/{dolzina}")
+    public List<Storitev> storitveZDaljsimCasom(@PathVariable(value="dolzina") Integer dolzina) {
+        return storitveDao.storitveSTerminimDaljsimOdCasa(dolzina);
     }
 }
